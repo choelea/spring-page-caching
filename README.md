@@ -1,3 +1,3 @@
 
-## 将你自己的项目发布到maven中央仓库
-参考：https://www.jianshu.com/p/8c3d7fb09bce
+## 灏嗕綘鑷繁鐨勯」鐩彂甯冨埌maven涓ぎ浠撳簱
+ https://www.jianshu.com/p/8c3d7fb09bce  https://central.sonatype.org/pages/ossrh-guide.html

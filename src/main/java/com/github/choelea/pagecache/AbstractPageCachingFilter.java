@@ -35,12 +35,16 @@ public abstract class AbstractPageCachingFilter  implements javax.servlet.Filter
 
 	private static final Logger LOG = LoggerFactory.getLogger(AbstractPageCachingFilter.class);
 	
-	private String cacheName;
 	public AbstractPageCachingFilter() {
 	}
 
 	protected abstract Boolean isCacheable(HttpServletRequest httpRequest);
 
+	/**
+	 * @param request request
+	 * @param response reponse
+	 * @param filterChain filterChain
+	 */
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
 			throws IOException, ServletException {
@@ -73,14 +77,13 @@ public abstract class AbstractPageCachingFilter  implements javax.servlet.Filter
 	
 	/**
 	 * Can be overridden for some cases.
-	 * @param request
-	 * @return
+	 * @param request request
 	 */
 	protected abstract String calculateKey(HttpServletRequest request);
 
     /**
      * Build page info either using the cache or building the page directly.
-     * <p/>
+     * 
      * Some requests are for page fragments which should never be gzipped, or
      * for other pages which are not gzipped.
      */
@@ -381,11 +384,6 @@ public abstract class AbstractPageCachingFilter  implements javax.servlet.Filter
 		
 	}
 
-	private String getCacheName() {
-		return this.cacheName;
-	}
+	protected abstract  String getCacheName();
 
-	public void setCacheName(String cacheName) {
-		this.cacheName = cacheName;
-	}
 }

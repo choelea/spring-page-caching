@@ -28,7 +28,7 @@ import java.util.TimeZone;
 
 /**
  * RFC 2616 - HTTP/1.1 Protocol
- * <p/>
+ * 
  * Section 3.3.1 defines the preferred full date and time as:
  * <pre>
  * HTTP-date    = rfc1123-date
@@ -43,11 +43,11 @@ import java.util.TimeZone;
  * | "May" | "Jun" | "Jul" | "Aug"
  * | "Sep" | "Oct" | "Nov" | "Dec"
  * </pre>
- * <p/>
+ * 
  * An example is <code>Sun, 06 Nov 1994 08:49:37 GMT</code>
- * <p/>
+ * 
  * These are used in request and response headers.
- * <p/>
+ * 
  * @author Greg Luck
  */
 public class HttpDateFormatter {
@@ -60,7 +60,7 @@ public class HttpDateFormatter {
 
     /**
      * Constructs a new formatter.
-     * <p/>
+     * 
      * Note that this class is not thread-safe for use by multiple threads, as SimpleDateFormat is not.
      * Each thread should create their own instance of this class.
      */

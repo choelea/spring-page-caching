@@ -67,16 +67,16 @@ public class PageInfo implements Serializable {
     
     /**
      * Creates a PageInfo object representing the "page". 
-     * <p/>
+     * 
      *
-     * @param statusCode
-     * @param contentType
-     * @param cookies
-     * @param body
+     * @param statusCode statusCode
+     * @param contentType contentType
+     * @param cookies cookie
+     * @param body body
      * @param storeGzipped      set this to false for images and page fragments which should never
      * @param timeToLiveSeconds the time to Live in seconds. 0 means maximum, which is one year per RFC2616.
-     * @param headers
-     * @throws AlreadyGzippedException
+     * @param headers headers
+     * @throws AlreadyGzippedException AlreadyGzippedException
      */
     public PageInfo(final int statusCode, final String contentType, 
                     final Collection<Cookie> cookies, 
@@ -139,7 +139,7 @@ public class PageInfo implements Serializable {
      * in the future.
      * @param timeToLiveSeconds accepts 0, which means eternal. If the time is 0 or > one year, it is set to one
      * year in accordance with the RFC.
-     * <p/>
+     * 
      * Note: PageInfo does not hold a reference to the ehcache Element and therefore does not know what the
      * Element ttl is. It would normally make most sense to set the TTL to the same as the element expiry.
      */
@@ -184,10 +184,8 @@ public class PageInfo implements Serializable {
     /**
      * Checks the first two bytes of the candidate byte array for the magic number 0x677a.
      * This magic number was obtained from /usr/share/file/magic. The line for gzip is:
-     * <p/>
-     * <code>
-     * >>14    beshort 0x677a          (gzipped)
-     * </code>
+     * 
+     * 
      *
      * @param candidate the byte array to check
      * @return true if gzipped, false if null, less than two bytes or not gzipped
